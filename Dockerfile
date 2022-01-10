@@ -6,4 +6,4 @@ RUN npm install
 COPY . .
 WORKDIR /usr/src/app
 EXPOSE 5002
-CMD [ "nodemon server.js" ]
+CMD [ "server.js" ]
