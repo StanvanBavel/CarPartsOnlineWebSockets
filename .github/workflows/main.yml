@@ -22,7 +22,7 @@ jobs:
     - name : Cache
       uses: actions/cache@v2
       with:
-        path: "./node_modules"
+        path: "./node_modules/ws"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
 #       working-directory: ./ui-carpartsonline
