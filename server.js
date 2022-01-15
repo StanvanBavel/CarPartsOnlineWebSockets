@@ -1,25 +1,3 @@
-// const { send } = require('process')
-// const WebSocket = require('ws')
-// const server = new WebSocket.Server({ port: '5000' })
-
-// server.on('connection', socket => {
-//     socket.on('message', function(message){
-//         socket-send('Awajja ${message}');
-//     });
-
-//     server.clients.forEach(function e(client){
-//         console.log("forEach test")
-//         console.log(client)
-//         console.log(message)
-//         let bericht = message
-//             client.send(
-//                 //  type: ws.personName,
-//                 //  data: message.data
-//                 bericht
-//                 );
-//             });
-// });
-
 var server = require('ws').Server;
 var s = new server({ port: 5002 });
 
@@ -33,19 +11,41 @@ console.log(message.toString())
         }
 
         console.log("Recieved: " +message.data);
-
-        //ws.send("From Server: "+message);
+       
+        
 
         s.clients.forEach(function e(client){
             console.log("forEach test")
             console.log(client)
             console.log(message.toString())
             let bericht = message.toString()
+            if(message == "Hallo" , message == "Hi", message == "Hey"){
                 client.send(
-                    //  type: ws.personName,
-                    //  data: message.data
-                    "Awaja"
+                    
+                  
+                    "Hallo waar kan ik mee helpen?"
                     );
+            }
+            if(message == "1"){
+                client.send(
+                "Mustang uit 1966 is een mooie auto"
+                );
+            }
+            if(message == "2"){
+                client.send(
+                "If you don't think Mustangs are nice cars. You are on the wrong site!"
+                );
+            }
+            if(message == "3"){
+                client.send(
+                "Mustang?"
+                );
+            }
+            if(message == "4"){
+                client.send(
+                "Do you want a Mustang?"
+                );
+            }
         
        });
 
